@@ -29,6 +29,7 @@
     "mango": "file:../mango",
     "mango-helper": "file:../mango-helper",
     "mango-plugin-controlbar": "file:../mango-plugin-controlbar",
+    "mango-plugin-popup": "file:../mango-plugin-popup",
     "toxic-decorators": "^0.3.8"
   },
   "devDependencies": {
