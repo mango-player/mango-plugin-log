@@ -22,14 +22,14 @@ const player = new Mango({
   controls: true
 });
 
-if(player.chimeeLog){
+if(player.mangoLog){
   const btnsBoxEl = document.querySelector('#btns');
   const _opened = ()=>{
-    btnsBoxEl.innerHTML = '<a href="###" onclick="player.chimeeLog.open()">Open the log panel.</a>'
+    btnsBoxEl.innerHTML = '<a href="###" onclick="player.mangoLog.open()">Open the log panel.</a>'
   };
   _opened();
-  player.chimeeLog.on('popupClose', _opened);
-  player.chimeeLog.on('popupOpen', ()=>{
-    btnsBoxEl.innerHTML = '<a href="###" onclick="player.chimeeLog.close()">Close the log panel.</a>'
+  player.mangoLog.on('popupClose', _opened);
+  player.mangoLog.on('popupOpen', ()=>{
+    btnsBoxEl.innerHTML = '<a href="###" onclick="player.mangoLog.close()">Close the log panel.</a>'
   });
 }
