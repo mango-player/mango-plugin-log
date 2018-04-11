@@ -12,8 +12,8 @@ import './index.css';
 
 // 存储页面开启时间，测试本地存储兼容性
 const pageLoadedTimestamp = new Date().getTime().toString();
-setLocalStorage('_chimee_t', pageLoadedTimestamp);
-const supportLS = getLocalStorage('_chimee_t') === pageLoadedTimestamp;
+setLocalStorage('_mango_t', pageLoadedTimestamp);
+const supportLS = getLocalStorage('_mango_t') === pageLoadedTimestamp;
 
 // 为日志相关事件实现基本的日志输出绑定
 const defaultEvents = ((...evs) => {
@@ -119,10 +119,10 @@ const defaultEvents = ((...evs) => {
 
 // 生产log组件对应的 PluginConfig
 export default popupFactory({
-  name: 'chimeeLog',
-  className: 'chimee-log',
+  name: 'mangoLog',
+  className: 'mango-log',
   title: '日志信息' + (supportLS ? '<label><input type="checkbox">下次自动打开</label>' : ''),
-  body: '<textarea>Chimee logs:</textarea>',
+  body: '<textarea>Mango logs:</textarea>',
   offset: '0',
   width: '400px',
   hide: true,
@@ -206,13 +206,13 @@ export default popupFactory({
 
     // 得到 inited 时要上报的日志
     send_inited_log () {
-      /* chimee 构建：
+      /* mango 构建：
       pro - protocol
       box - box
       type - type
       src - src
       uid - cookie
-      ver - chimee 版本
+      ver - mango 版本
       _t - 时间戳
       _r - 随机数
       */
@@ -262,10 +262,10 @@ export default popupFactory({
       uid: (uid => {
         if (!uid) {
           uid = uuid();
-          setLocalStorage('_chimee_uid', uid);
+          setLocalStorage('_mango_uid', uid);
         }
         return uid;
-      })(getLocalStorage('_chimee_uid')),
+      })(getLocalStorage('_mango_uid')),
       ref: location.href
     }
   },
